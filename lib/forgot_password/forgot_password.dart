@@ -1,43 +1,22 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:vxs/forgot_password/forgot_password.dart';
+import 'package:vxs/login/login_page.dart';
 
-import '../signup/signup_page.dart';
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({super.key});
 
-/* This is the LOGIN PAGE of the app
-  BACKGROUND COLOR CODE HEX: #34b982 RGB: rgba(52,185,130,255)
-  HELLO TEXT COLOR CODE HEX: #fff2d1
-  SIGN INTO YOUR ACCOUNT COLOR CODE HEX: #1d5055
-   The structure is gonna be a COLUMN that shows THE LOGO AT THE TOP(1/3 of the screen)
-   2 Rows of TEXT (Hello, Sign into your account)
-   2 FORM FIELDS (Email and Password)
-   2 Buttons for @FORGOT PASSWORD, @Sign In
-
-
-*/
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    //We use this so we can change the width easily
+     //We use this so we can change the width easily
     double w = MediaQuery.of(context).size.width;
-    const double padding = 15;
     //We use this so we can change the height easily
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      //BACKGROUND COLOR
       backgroundColor: Color(0xff34b982),
       body: Column(
         children: [
@@ -63,15 +42,15 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Hello",
+                  "Forgot your password?",
                   style: TextStyle(
-                    fontSize: 70,
+                    fontSize: 35,
                     fontWeight: FontWeight.bold,
                     color: Color(0xfffff2d1)
                   ),
                 ),//HELLO TEXT ENDS HERE
                 Text(
-                  "Sign into your account",
+                  "Please fill in the information",
                   style: TextStyle(
                     fontSize: 20,
                     color: Color(0xff1d5055)
@@ -96,10 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Email',
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.fromLTRB(padding, 0, 0, 0),
-                        child: Icon(Icons.email, color: Color(0xff34b982),),
-                      ),
+                      prefixIcon: Icon(Icons.email, color: Color(0xff34b982),),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -138,11 +114,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: 'Password',
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.fromLTRB(padding, 0, 0, 0),
-                        child: Icon(Icons.key, color: Color(0xff34b982),),
-                      ),
+                      hintText: 'Name',
+                      prefixIcon: Icon(Icons.person, color: Color(0xff34b982),),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -163,52 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
-
-                //FORGOT YOUR PASSWORD TEXT
-                /*Row(children: [
-                  Expanded(child: Container(),),
-                  Text(
-                  "Forgot your password?",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color(0xff1d5055)
-                  ),
-                  
-                  
-                ),//FORGOT PASSWORD TEXT ENDS HERE
-                ],)*/
-                Column(
-                  children: [
-                    RichText(text: TextSpan(
-            text: "Forgot Password? ",
-            style: TextStyle(
-              color: Color(0xff1d5055),
-              fontSize: 20,
-            ),
-            children: [
-              //CREATE CLICKABLE
-            TextSpan(
-            text: "Recover",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-            recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>ForgotPassword())
-            ), //CREATE CLICKABLE ENDS HERE
-            ]
-          ),
-          
-          ),
-                  ],
-                
-                ),
-                //DONT
-               
-                
-                
-                
+                SizedBox(height: 20,)
               ],
               
               ),
@@ -229,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             child: Center(
               child: Text(
-                    "Sign In",
+                    "Submit",
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -242,28 +170,27 @@ class _LoginPageState extends State<LoginPage> {
 
           //DONT HAVE AN ACCOUNT TEXT STARTS HERE
           RichText(text: TextSpan(
-            text: "Don't have an account? ",
+            text: "",
             style: TextStyle(
               color: Color(0xff1d5055),
               fontSize: 20,
             ),
             children: [
-              //CREATE CLICKABLE
             TextSpan(
-            text: "Create",
+            text: "Go Back",
             style: TextStyle(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
-            recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage())
-            ), //CREATE CLICKABLE ENDS HERE
+            recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>LoginPage())
+            ),
             ]
           ),
           
           ),//DONT HAVE AN ACCOUNT TEXT ENDS HERE
         ],
       )
-        );
+    );
   }
 }
