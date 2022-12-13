@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "927177453007",
+    "project_id": "vxsmanagement-adcaa",
+    "storage_bucket": "vxsmanagement-adcaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927177453007:android:7a5e8e7693e6fe332536ba",
+        "android_client_info": {
+          "package_name": "com.licenta.vxs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927177453007-1g7rea3gr8a858jsc5rbppgiv3d8o4ou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT2u5g7ndT7HhRqOkiv3Ur9JVqZcaz3_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927177453007-1g7rea3gr8a858jsc5rbppgiv3d8o4ou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,9 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:vxs/auth_controller/auth_controller.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  String email;
+  WelcomePage({Key? key, required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,7 @@ class WelcomePage extends StatelessWidget {
               ),//WELCOME TEXT ENDS HERE
             SizedBox(height: 5,),
             Text(
-              'Vasile Sofron',
+              email,
               style: TextStyle(
               fontSize: 16,
               color: Color(0xfffff2d1),
@@ -60,27 +62,32 @@ class WelcomePage extends StatelessWidget {
             ],),
           ),
           SizedBox(height: 55.0,),
-          Container(
-            width: w*0.5,
-            height: h*0.08,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: DecorationImage(
-                image: AssetImage(
-                  "img/signin.png"
-                ),
-                fit: BoxFit.cover
-              ),
-            ),
-            child: Center(
-              child: Text(
-                    "Log Out",
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff1d5055)
-                    ),
+          GestureDetector(
+            onTap: () {
+              AuthController.instance.logOut();
+            },
+            child: Container(
+              width: w*0.5,
+              height: h*0.08,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                  image: AssetImage(
+                    "img/signin.png"
                   ),
+                  fit: BoxFit.cover
+                ),
+              ),
+              child: Center(
+                child: Text(
+                      "Log Out",
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff1d5055)
+                      ),
+                    ),
+              ),
             ),
           ),
           

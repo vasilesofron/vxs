@@ -5,18 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:vxs/auth_controller/auth_controller.dart';
 import 'package:vxs/login/login_page.dart';
+var emailController = TextEditingController();
+    var passwordController = TextEditingController();
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     //We use this so we can change the width easily
     double w = MediaQuery.of(context).size.width;
     //We use this so we can change the height easily
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xff34b982),
       body: Column(
         children: [
@@ -117,6 +122,7 @@ class SignUpPage extends StatelessWidget {
                     ],
                   ),
                   child: TextField(
+                    controller: emailController,
                     decoration: InputDecoration(
                       hintText: 'Email',
                       prefixIcon: Icon(Icons.email, color: Color(0xff34b982),),
@@ -157,6 +163,8 @@ class SignUpPage extends StatelessWidget {
                     ],
                   ),
                   child: TextField(
+                    obscureText: true,
+                    controller: passwordController,
                     decoration: InputDecoration(
                       hintText: 'Password',
                       prefixIcon: Icon(Icons.key, color: Color(0xff34b982),),
@@ -196,6 +204,7 @@ class SignUpPage extends StatelessWidget {
                     ],
                   ),
                   child: TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Confirm Password',
                       prefixIcon: Icon(Icons.key, color: Color(0xff34b982),),
@@ -230,27 +239,32 @@ class SignUpPage extends StatelessWidget {
               
           ),
           SizedBox(height: 35.0,),
-          Container(
-            width: w*0.5,
-            height: h*0.08,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: DecorationImage(
-                image: AssetImage(
-                  "img/signin.png"
-                ),
-                fit: BoxFit.cover
-              ),
-            ),
-            child: Center(
-              child: Text(
-                    "Create",
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff1d5055)
-                    ),
+          GestureDetector(
+            onTap: (){
+              AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
+            },
+            child: Container(
+              width: w*0.5,
+              height: h*0.08,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                  image: AssetImage(
+                    "img/signin.png"
                   ),
+                  fit: BoxFit.cover
+                ),
+              ),
+              child: Center(
+                child: Text(
+                      "Create",
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff1d5055)
+                      ),
+                    ),
+              ),
             ),
           ),
           SizedBox(height: w*0.13),
