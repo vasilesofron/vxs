@@ -92,4 +92,6 @@ class AuthController extends GetxController{
     await auth.signOut();
   }
 
+
+//TEST TEST TEST
 }
