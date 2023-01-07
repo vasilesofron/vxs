@@ -6,6 +6,7 @@ import 'package:vxs/auth_controller/auth_controller.dart';
 import 'package:vxs/bindings/auth_binding.dart';
 import 'package:vxs/login/login_page.dart';
 import 'package:get/get.dart';
+import 'package:vxs/nav_screens/home/home.dart';
 import 'package:vxs/nav_screens/home/home_controller.dart';
 import 'package:vxs/nav_screens/nav_dashboard/nav_dashboard.dart';
 import 'package:vxs/nav_screens/nav_dashboard/nav_dashboard_binding.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(
-          name: "/", page: () => NavDashboard(),
+          name: "/", page: () => SplashScreen()
         )
       ],
     );

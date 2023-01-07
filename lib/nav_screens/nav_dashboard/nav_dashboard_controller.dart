@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+/*import 'package:get/get.dart';
 
 class NavDashboardController extends GetxController{
   var tabIndex = 0;
@@ -7,4 +7,4 @@ class NavDashboardController extends GetxController{
     tabIndex = index;
     update();
   }
-}
+}*/
