@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class Recipes extends StatefulWidget {
+  const Recipes({super.key});
 
-  
+  @override
+  State<Recipes> createState() => _RecipesState();
+}
 
-
+class _RecipesState extends State<Recipes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class Profile extends StatelessWidget {
         centerTitle: true,
         title: Center(
           child: Text(
-            'Profile',
+            'Recipes',
             style: TextStyle(
             color: Color(0xfffff2d1),
             ),
@@ -29,7 +31,7 @@ class Profile extends StatelessWidget {
       body: Container(
         child: Center(
           child: Text(
-            "Profile Page",
+            "Recipes",
             style: TextStyle(fontSize: 20),
           ),
         ),

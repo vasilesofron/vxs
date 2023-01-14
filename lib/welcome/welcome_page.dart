@@ -7,11 +7,13 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:vxs/auth_controller/auth_controller.dart';
+import 'package:vxs/machinery/machinery.dart';
 import 'package:vxs/nav_screens/farm/farm.dart';
 import 'package:vxs/nav_screens/home/home.dart';
 import 'package:vxs/nav_screens/nav_dashboard/nav_dashboard.dart';
 import 'package:vxs/nav_screens/profile/profile.dart';
 import 'package:vxs/nav_screens/to_do/to_do.dart';
+import 'package:vxs/recipes/recipes.dart';
 
 import '../navigation/custom_animated_bottom_bar.dart';
 
@@ -162,7 +164,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(Profile());
+                Get.to(Machinery());
               },
               child: Container(
                 width: w * 0.9,
@@ -200,7 +202,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(Profile());
+                Get.to(Recipes());
               },
               child: Container(
                 width: w * 0.9,

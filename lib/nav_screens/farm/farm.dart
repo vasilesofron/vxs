@@ -19,6 +19,18 @@ class _FarmHomeState extends State<FarmHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xff34b982),
+        centerTitle: true,
+        title: Center(
+          child: Text(
+            'Farm',
+            style: TextStyle(
+            
+            ),
+          ),
+        ),
+      ),
       backgroundColor: Color(0xff34b982),
       body: Container(
         child: Center(

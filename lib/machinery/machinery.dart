@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class Machinery extends StatefulWidget {
+  const Machinery({super.key});
 
-  
+  @override
+  State<Machinery> createState() => _MachineryState();
+}
 
-
+class _MachineryState extends State<Machinery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class Profile extends StatelessWidget {
         centerTitle: true,
         title: Center(
           child: Text(
-            'Profile',
+            'Machinery',
             style: TextStyle(
             color: Color(0xfffff2d1),
             ),
@@ -29,7 +31,7 @@ class Profile extends StatelessWidget {
       body: Container(
         child: Center(
           child: Text(
-            "Profile Page",
+            "Machinery",
             style: TextStyle(fontSize: 20),
           ),
         ),

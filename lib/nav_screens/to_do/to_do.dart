@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,6 +17,19 @@ class ToDoList extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xff34b982),
+      appBar: AppBar(
+        backgroundColor: Color(0xff34b982),
+        centerTitle: true,
+        title: Center(
+          child: Text(
+            'To Do List',
+            
+            style: TextStyle(
+            color: Color(0xfffff2d1),
+            ),
+          ),
+        ),
+      ),
       body: Column(
         children: [
           SizedBox(height: 25,),
