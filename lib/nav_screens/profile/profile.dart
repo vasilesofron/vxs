@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -40,17 +40,18 @@ class Profile extends StatelessWidget {
                   bottom: 0,
                   right: 0,
                   child: Container(
-                          width: 35,
-                          height: 35,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: Color(0xff34b982).withOpacity(0.5),
-                          ),
-                          child: Icon(
-                            Icons.camera_alt_rounded,
-                            color: Color(0xfffff2d1),
-                            size: 20,),
-                        ),
+                    width: 35,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: Color(0xff34b982).withOpacity(0.5),
+                    ),
+                    child: Icon(
+                      Icons.camera_alt_rounded,
+                      color: Color(0xfffff2d1),
+                      size: 20,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -58,120 +59,182 @@ class Profile extends StatelessWidget {
               height: 10,
             ),
             Text("User Name Dummy Text"),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Text("Email Addres Dummy Text"),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             SizedBox(
                 width: 200,
                 child: ElevatedButton(
-                    onPressed: () {}, 
-                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Color(0xff34b982),
-                      backgroundColor: Color(0xfffff2d1), 
-                      side: BorderSide.none,
-                      shape: StadiumBorder(),
-                      textStyle: TextStyle(
-                        color: Color(0xff34b982),),
-                        
-                        ),
-                     child: const Text("Save Profile"),)
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Color(0xff34b982),
+                    backgroundColor: Color(0xfffff2d1),
+                    side: BorderSide.none,
+                    shape: StadiumBorder(),
+                    textStyle: TextStyle(
+                      color: Color(0xff34b982),
                     ),
-                    SizedBox(height: 30,),
-                    Divider(),
+                  ),
+                  child: const Text("Save Profile"),
+                )),
+            SizedBox(
+              height: 30,
+            ),
+            Divider(),
 
-                    ///MENU
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                      child: Form(child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text('Full Name'),
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.person_outline_rounded,
-                            color: Color(0xfffff2d1),
-                            ),
-                            labelStyle: TextStyle(
-                              color: Color(0xfffff2d1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2.0, color: Color(0xfffff2d1)),
-                            )
-                          ),
+            ///MENU
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              child: Form(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                        label: Text('Full Name'),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
                         ),
-                        SizedBox(height: 10,),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text('Farm Name'),
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.house_rounded,
-                            color: Color(0xfffff2d1),
-                            ),
-                            labelStyle: TextStyle(
-                              color: Color(0xfffff2d1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2.0, color: Color(0xfffff2d1)),
-                            )
-                          ),
+                        prefixIcon: Icon(
+                          Icons.person_outline_rounded,
+                          color: Color(0xfffff2d1),
                         ),
-                        SizedBox(height: 10,),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text('Email'),
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.email_rounded,
-                            color: Color(0xfffff2d1),
-                            ),
-                            labelStyle: TextStyle(
-                              color: Color(0xfffff2d1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2.0, color: Color(0xfffff2d1)),
-                            )
-                          ),
+                        labelStyle: TextStyle(
+                          color: Color(0xfffff2d1),
                         ),
-                        SizedBox(height: 10,),
-                        TextFormField(
-                          controller: passwordController,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            label: Text('Password'),
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.key_rounded,
-                            color: Color(0xfffff2d1),
-                            ),
-                            labelStyle: TextStyle(
-                              color: Color(0xfffff2d1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2.0, color: Color(0xfffff2d1)),
-                            )
-                          ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide:
+                              BorderSide(width: 2.0, color: Color(0xfffff2d1)),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        label: Text('Farm Name'),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
                         ),
-                        SizedBox(height: 10,),
-                        TextFormField(
-                          controller: passwordController,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            label: Text('Confirm Password'),
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.key_rounded,
-                            color: Color(0xfffff2d1),
-                            ),
-                            labelStyle: TextStyle(
-                              color: Color(0xfffff2d1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2.0, color: Color(0xfffff2d1)),
-                            )
-                          ),
+                        prefixIcon: Icon(
+                          Icons.house_rounded,
+                          color: Color(0xfffff2d1),
                         ),
-                        ],
-                      )
+                        labelStyle: TextStyle(
+                          color: Color(0xfffff2d1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide:
+                              BorderSide(width: 2.0, color: Color(0xfffff2d1)),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        label: Text('Email'),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.email_rounded,
+                          color: Color(0xfffff2d1),
+                        ),
+                        labelStyle: TextStyle(
+                          color: Color(0xfffff2d1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide:
+                              BorderSide(width: 2.0, color: Color(0xfffff2d1)),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        label: Text('Password'),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.key_rounded,
+                          color: Color(0xfffff2d1),
+                        ),
+                        labelStyle: TextStyle(
+                          color: Color(0xfffff2d1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide:
+                              BorderSide(width: 2.0, color: Color(0xfffff2d1)),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        label: Text('Confirm Password'),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.key_rounded,
+                          color: Color(0xfffff2d1),
+                        ),
+                        labelStyle: TextStyle(
+                          color: Color(0xfffff2d1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide:
+                              BorderSide(width: 2.0, color: Color(0xfffff2d1)),
+                        )),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text.rich(
+                        TextSpan(
+                            text: 'Joined DUMMY TEXT',
+                            style: TextStyle(fontSize: 12),
+                            children: [
+                              TextSpan(
+                                text: ' DATE DUMMY TEXT',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ]),
                       ),
-                    )
-                    
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          shape: const StadiumBorder(),
+                          side: BorderSide.none,
+                            backgroundColor: Colors.redAccent),
+                        child: const Text('Delete'),
+                      )
+                    ],
+                  ),
+                ],
+              )),
+            ),
           ]),
         ),
       ),
