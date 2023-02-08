@@ -20,6 +20,7 @@ class TaskController extends GetxController{
 
   Future<void> createTask(TaskModel task) async{
     await taskRepo.createTask(task);
+    Get.back();
   }
 
 }
