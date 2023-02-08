@@ -8,8 +8,8 @@ class UserRepository extends GetxController{
 
 final _db = FirebaseFirestore.instance;
 
-createUser(UserModel user){
-  _db.collection("Profile").add(user.toJson()).whenComplete(
+createUser(UserModel user) async {
+   await _db.collection("Profile").add(user.toJson()).whenComplete(
     () => Get.snackbar("Succes", "Your profile has been updated!",
     snackPosition: SnackPosition.BOTTOM,
     backgroundColor: Colors.green.withOpacity(0.1),

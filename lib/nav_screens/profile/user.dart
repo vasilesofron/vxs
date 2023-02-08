@@ -14,4 +14,16 @@ class UserModel {
     required this.password,
     required this.email,
   });
+
+  toJson(){
+    return {
+      "FullName": fullName,
+      "FarmName": farmName,
+      "Email": email,
+      "Password": password,
+      "ConfirmPassword": confirmPassword,
+    };
+  }
+
+
 }

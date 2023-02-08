@@ -12,7 +12,10 @@ import 'package:vxs/nav_screens/farm/farm.dart';
 import 'package:vxs/nav_screens/home/home.dart';
 import 'package:vxs/nav_screens/nav_dashboard/nav_dashboard.dart';
 import 'package:vxs/nav_screens/profile/profile.dart';
+import 'package:vxs/nav_screens/to_do/task_page.dart';
 import 'package:vxs/nav_screens/to_do/to_do.dart';
+import 'package:vxs/nav_screens/to_do/to_do_FINAL.dart';
+import 'package:vxs/nav_screens/to_do/to_do_page_test.dart';
 import 'package:vxs/recipes/recipes.dart';
 
 import '../navigation/custom_animated_bottom_bar.dart';
@@ -127,7 +130,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(ToDoList());
+                Get.to(TaskAdd());
               },
               child: Container(
                 width: w * 0.9,
